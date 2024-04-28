@@ -1,7 +1,3 @@
-# Leader election
-
-A service that exists in multiple replicas and each replica is constantly competing for leadership.
-
 ## Algorithm
 
 The replica that becomes the leader writes a file to the `file-dir` directory every `leader-timeout` seconds and also
