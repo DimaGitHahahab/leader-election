@@ -1,9 +1,5 @@
 ## Algorithm
-
-The replica that becomes the leader writes a file to the `file-dir` directory every `leader-timeout` seconds and also
-deletes old files if the number of files in the directory is greater than `storage-capacity`. ZooKeeper ephemeral nodes
-are used to select the leader. The service is a state machine that changes its state depending on actions.
-
+The service is a state machine that changes its state depending on actions.
 ```mermaid
 stateDiagram-v2
 [*] --> Init
@@ -17,6 +13,10 @@ Attempter --> Stopping : Get `SIGTERM`
 Leader --> Stopping : Receive `SIGTERM`
 Failover --> Stopping : Receive `SIGTERM`
 ```
+The replica that becomes the leader writes a file to the `file-dir` directory every `leader-timeout` seconds and also
+deletes old files if the number of files in the directory is greater than `storage-capacity`. ZooKeeper ephemeral nodes
+are used to select the leader.
+
 
 ## Configuration
 
