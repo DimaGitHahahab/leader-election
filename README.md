@@ -28,5 +28,7 @@ The project is configured using flags on the command line.
   Example: `--leader-timeout=10s`.
 - `attempter-timeout`(`time.Duration`) - Periodicity with which the atempter tries to become a leader.
   Example: `--attemptempter-timeout=10s`.
-- `file-dir`(`string`) - The directory where the leader should write files. Example: `--file-dir=/tmp/election`.
-- `storage-capacity`(`int`) - Maximum number of files in the `file-dir` directory. Example: `--storage-capacity=10`.
+- `file-dir`(`string`) - The directory where the leader should write files.
+  Example: `--file-dir=/tmp/election`.
+- `storage-capacity`(`int`) - Maximum number of files in the `file-dir` directory.
+  Example: `--storage-capacity=10`.
