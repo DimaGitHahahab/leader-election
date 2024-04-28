@@ -22,7 +22,7 @@ are used to select the leader.
 
 The project is configured using flags on the command line.
 
-- `zk-servers`(`[]string`) - An array with the addresses of the zukiper servers.
+- `zk-servers`(`[]string`) - An array with the addresses of the zookeeper servers.
   Example: `--zk-servers=foo1.bar:2181,foo2.bar:2181`
 - `leader-timeout`(`time.Duration`) - The frequency of the leader writing a zookeeper file to disk.
   Example: `--leader-timeout=10s`.
