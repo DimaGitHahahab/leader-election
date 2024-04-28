@@ -2,15 +2,7 @@
 
 The replica that becomes the leader writes a file to the `file-dir` directory every `leader-timeout` seconds and also
 deletes old files if the number of files in the directory is greater than `storage-capacity`. ZooKeeper ephemeral nodes
-are used to select the leader. The service is a state machine that changes its state depending on actions. The list of
-states is as follows:
-
-- `Init` - Initialization starts, checking the availability of all resources
-- `Attemptempter` - Trying to become a leader - once in `attemptempter-timeout` we try to create an ephemeral node in
-  the zookeeper.
-- `Leader` - Once you become a leader, you need to write a file to disk.
-- `Failover` - Something's broken, trying to fix itself.
-- ``Stopping`` - Graceful shutdown - a state in which the application frees all its resources
+are used to select the leader. The service is a state machine that changes its state depending on actions.
 
 ```mermaid
 stateDiagram-v2
